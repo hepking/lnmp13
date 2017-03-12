@@ -1,4 +1,4 @@
-FROM tutum/centos:centos6
+FROM duckll/base
 
 MAINTAINER San
 
@@ -7,10 +7,11 @@ EXPOSE 21
 EXPOSE 22 
 EXPOSE 443
 
-ENV ROOT_PASS lnmp123
-
-# centos
-RUN yum -y install wget 
+# apt-get
+RUN apt-fast update
+RUN apt-fast -y install
+RUN net-tools
+RUN apt-fast clean
 
 # install lnmp
 RUN wget http://soft.vpser.net/lnmp/lnmp1.3.tar.gz
