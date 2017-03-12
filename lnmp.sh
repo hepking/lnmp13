@@ -1,2 +1,2 @@
 #!/bin/sh
-lnmp restart
+lnmp start
