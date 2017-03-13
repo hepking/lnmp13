@@ -1,12 +1,12 @@
-FROM tutum/ubuntu:trusty
+FROM tutum/centos:centos6
 
 MAINTAINER San
 
-# apt-get
-RUN apt-fast update \
-&& apt-fast -y install \
-   net-tools \
-&& apt-fast clean \
+ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
+ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
+
+# centos
+RUN yum -y install wget 
 
 # install lnmp
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz
@@ -26,4 +26,3 @@ ENV ROOT_PASS lnmp123
 
 # set lnmp start
 RUN wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/lnmp.sh -O /etc/my_init.d/lnmp.sh \
-RUN chmod +x /etc/my_init.d/lnmp.sh
