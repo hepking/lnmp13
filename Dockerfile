@@ -3,7 +3,6 @@ FROM tutum/centos:centos6
 MAINTAINER San
 
 # centos
-RUN yum -y update
 RUN yum -y install wget 
 
 # install lnmp
