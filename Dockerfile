@@ -10,7 +10,7 @@ RUN wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz
 RUN tar -xvf ./lnmp1.3-full.tar.gz
 RUN cd lnmp1.3-full
 RUN wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/install.conf
-RUN cat install.conf | ./install.sh lnmp
+RUN cat install.conf | install.sh lnmp
 RUN cd ../
 RUN rm -rf lnmp1.3-full.tar.gz lnmp1.3-full
 
