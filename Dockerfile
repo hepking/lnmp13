@@ -6,7 +6,7 @@ MAINTAINER San
 RUN yum -y install wget 
 
 # install lnmp
-&& wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar -xvf ./lnmp1.3-full.tar.gz \
+RUN wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar -xvf ./lnmp1.3-full.tar.gz \
 && cd lnmp1.3-full && wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/install.conf && cat install.conf | ./install.sh \
 && cd ../ && rm -rf lnmp1.3-full.tar.gz lnmp1.3-full \
 
