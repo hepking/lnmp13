@@ -10,10 +10,7 @@ RUN wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar -xvf ./lnmp1.3
 && cd lnmp1.3-full && wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/install.conf && cat install.conf | ./install.sh \
 && cd ../ && rm -rf lnmp1.3-full.tar.gz lnmp1.3-full \
 
-EXPOSE 80 
-EXPOSE 21 
-EXPOSE 22 
-EXPOSE 443
+EXPOSE 80 21 22 443
 
 ENV ROOT_PASS lnmp123
 
