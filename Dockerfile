@@ -19,4 +19,4 @@ ENV ROOT_PASS lnmp123
 
 # set lnmp start
 RUN wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/lnmp.sh -O /etc/my_init.d/lnmp.sh \
-RUN chmod +x /etc/my_init.d/lnmp.sh
+&& chmod +x /etc/my_init.d/lnmp.sh
