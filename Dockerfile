@@ -1,16 +1,19 @@
-FROM tutum/centos:centos6
+FROM tutum/ubuntu:trusty
 
 MAINTAINER San
 
-# centos
-RUN yum -y install wget 
+# apt-get
+RUN apt-fast update \
+&& apt-fast -y install \
+   net-tools \
+&& apt-fast clean \
 
 # install lnmp
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz
 RUN tar -xvf ./lnmp1.3-full.tar.gz
 RUN cd lnmp1.3-full
 RUN wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/install.conf
-RUN cat install.conf | /root/lnmp1.3-full/install.sh
+RUN cat install.conf | ./install.sh
 RUN cd ../
 RUN rm -rf lnmp1.3-full.tar.gz lnmp1.3-full
 
