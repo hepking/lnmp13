@@ -1,12 +1,9 @@
-FROM duckll/base
+FROM tutum/centos:centos6
 
-MAINTAINER DuckLL <a347liao@gmail.com>
+MAINTAINER San
 
-# apt-get
-RUN apt-fast update \
-&& apt-fast -y install \
-   net-tools \
-&& apt-fast clean \
+# centos
+RUN yum -y install wget 
 
 # install lnmp
 && wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar -xvf ./lnmp1.3-full.tar.gz \
@@ -18,6 +15,8 @@ EXPOSE 21
 EXPOSE 22 
 EXPOSE 443
 
+ENV ROOT_PASS lnmp123
+
 # set lnmp start
-&& wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/lnmp.sh -O /etc/my_init.d/lnmp.sh \
-&& chmod +x /etc/my_init.d/lnmp.sh
+RUN wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/lnmp.sh -O /etc/my_init.d/lnmp.sh \
+RUN chmod +x /etc/my_init.d/lnmp.sh
