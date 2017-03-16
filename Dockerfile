@@ -8,7 +8,7 @@ RUN sudo sed -i -e 's/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubunt
 && apt-get install wget
 
 # set lnmp start
-RUN wget https://raw.githubusercontent.com/DuckLL/lnmp/ubuntu/lnmp.sh -O /etc/my_init.d/lnmp.sh \
-&& chmod +x /etc/my_init.d/lnmp.sh
+RUN wget https://raw.githubusercontent.com/DuckLL/lnmp/ubuntu/lnmp.sh -O /etc/init.d/lnmp.sh \
+&& chmod +x /etc/init.d/lnmp.sh
 
 
