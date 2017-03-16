@@ -7,6 +7,9 @@ RUN sudo sed -i -e 's/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubunt
 && apt-get update \
 && apt-get install wget
 
+EXPOSE 80 21 22 443
+ENV ROOT_PASS lnmp123
+
 # install lnmp
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar -xvf ./lnmp1.3-full.tar.gz \
 && cd lnmp1.3-full && wget https://raw.githubusercontent.com/c21xdx/lnmp13/ubuntu/install.conf && cat install.conf | ./install.sh \
