@@ -13,5 +13,5 @@ EXPOSE 80 21 22 443
 ENV ROOT_PASS lnmp123
 
 # set lnmp start
-RUN wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/lnmp.sh -O /etc/init.d/lnmp.sh
+RUN wget https://raw.githubusercontent.com/c21xdx/lnmp13/master/lnmp.sh -O /etc/init.d/lnmp.sh \
 && chmod +x /etc/init.d/lnmp.sh
