@@ -1,9 +1,12 @@
 FROM tutum/centos:centos6
 #FROM saltstack/centos-7-minimal
-MAINTAINER iuact.com
+MAINTAINER iuact.cc
 
 # centos
-RUN yum -y install wget 
+RUN yum -y install wget git zip unzip
+
+# install sshd
+RUN yum install -y openssh-server openssh-clients passwd
 
 # install lnmp
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar -xvf ./lnmp1.3-full.tar.gz \
